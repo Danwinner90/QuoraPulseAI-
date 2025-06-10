@@ -1,0 +1,72 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.auth-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #b30000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container {
+  background-color: #d90000;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-container h1 {
+  margin-bottom: 24px;
+  font-size: 26px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-container input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.auth-container button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  color: #b30000;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: #ffcccc;
+}
+
+.toggle-mode {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.toggle-mode span {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #ffe6e6;
+}
