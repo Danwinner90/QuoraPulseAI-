@@ -13,6 +13,12 @@
       <input type="email" placeholder="Email" required />
       <input type="password" placeholder="Password" required />
       <button type="submit">Sign Up</button>
+      <script>
+  document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Empêche le rechargement par défaut
+    window.location.href = "home.html"; // Redirige vers la page d'accueil ou la page principale
+  });
+      </script>
     </form>
     <p class="toggle-mode">Already here? <span id="toggle">Sign in</span></p>
   </div>
