@@ -1,171 +1,118 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Features - QuoraPulseAI</title>
-  <meta name="description" content="QuoraPulseAI is an automated bot focused on RECOUP DIGITAL ASSETS that handles Quora account creation, posting, upvoting and targeted commenting. Built by Terry Group." />
+  <meta name="description" content="QuoraPulseAI is an automated bot that handles Quora account creation, post scheduling, upvoting and targeted commenting. Built by Terry Group.">
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
       margin: 0;
       padding: 0;
-    }
-    header {
-      background-color: #b30000;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      text-decoration: none;
-      color: white;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    main {
-      padding: 40px 20px;
-    }
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .feature-box {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      padding: 25px;
-    }
-    .feature-box h3 {
-      margin-top: 0;
-      color: #b30000;
-    }
-    .results {
-      margin-top: 10px;
-      background-color: #f9f9f9;
-      border-left: 4px solid #b30000;
-      padding: 12px;
-      font-style: italic;
-    }
-    .final-results {
-      margin-top: 50px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .result-card {
-      background: white;
-      border-left: 5px solid #b30000;
-      padding: 15px;
-      flex: 1 1 250px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    }
-    .result-card a {
-      text-decoration: none;
-      color: #b30000;
-      font-weight: bold;
-    }
-    .time-display {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-      background-color: #fff;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
+      background-color: #f4f4f4;
+    }.features-header {
+  background-color: #b30000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+#clock {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.feature-box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.feature-box h3 {
+  color: #b30000;
+  margin-top: 0;
+}
+
+.results-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.result-link {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px;
+  background-color: #fff;
+  border-left: 4px solid #b30000;
+  text-decoration: none;
+  color: #b30000;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <a href="home.html" class="logo">
-      <svg width="40" height="40" viewBox="0 0 100 100" fill="white" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
-        <circle cx="50" cy="50" r="45" stroke="white" stroke-width="5" fill="red"/>
-        <text x="50%" y="55%" text-anchor="middle" fill="white" font-size="32px" font-family="Arial" dy=".3em">Q</text>
-      </svg>
-      <span style="margin-left: 10px;">uoraPulse<span style="color:#fff;">AI</span></span>
-    </a>
-  </header>  <main>
-    <div class="time-display">
-      <div><strong>Current Time:</strong> <span id="current-time">--:--:--</span></div>
-      <div><strong>Elapsed Time:</strong> <span id="elapsed-time">00:00:00</span></div>
-    </div><div class="dashboard-grid">
-  <div class="feature-box">
-    <h3>1. Automated Account Creation</h3>
-    <p>The bot creates full Quora accounts including bios and interests.</p>
-    <div class="results">
-      🕒 In Progress<br />
-      🔐 Expected Output: 3 profiles for RECOUP DIGITAL ASSETS activity.
-    </div>
-  </div>
-
-  <div class="feature-box">
-    <h3>2. Auto-Posting of Questions</h3>
-    <p>Publishes targeted questions promoting RECOUP DIGITAL ASSETS.</p>
-    <div class="results">
-      🕒 In Progress<br />
-      💬 Example: “Is RECOUP DIGITAL ASSETS the best company for crypto recovery?”
-    </div>
-  </div>
-
-  <div class="feature-box">
-    <h3>3. Commenting + Upvoting</h3>
-    <p>Boosts visibility via strategic comments and mass upvotes.</p>
-    <div class="results">
-      🕒 In Progress<br />
-      📈 Targeted on RECOUP DIGITAL ASSETS topics only.
-    </div>
-  </div>
-
-  <div class="feature-box">
-    <h3>4. Growth Tracking + Reports</h3>
-    <p>Analyzes performance of RECOUP DIGITAL ASSETS mentions.</p>
-    <div class="results">
-      🕒 In Progress<br />
-      📊 Generates 2-hour reports for activity summary.
-    </div>
-  </div>
+  <div class="features-header">
+    <h1>Bot Features</h1>
+    <div id="clock"></div>
+  </div>  <main class="features-grid">
+    <div class="feature-box">
+      <h3>1. Automated Account Creation</h3>
+      <p>The bot creates fully functional Quora accounts without human input, including bio setup and interests selection.</p>
+      <p><strong>🕒 After 2h:</strong> 3 accounts created<br />
+      🔑 Usernames: Ridley Dave, Isidor Gustave, Sam Chretien<br />
+      📍 Interests: Technology, Finance, Psychology</p>
+    </div><div class="feature-box">
+  <h3>2. Auto-Posting of Questions</h3>
+  <p>Automatically posts niche-related questions based on user-defined keywords focused on RECOUP DIGITAL ASSETS.</p>
+  <p><strong>🕒 After 2h:</strong> 32 questions posted<br />
+  💬 Examples: “Recoup Digital Assets est-elle parfaite pour nous sauver?”, “Quelle est la meilleure société de récupération crypto si ce n’est RECOUP DIGITAL ASSETS ?”</p>
 </div>
 
-<div class="final-results">
-  <div class="result-card">
-    ✅ <a href="https://fr.quora.com/profile/Sam-Chretien" target="_blank">Sam Chretien</a>
-  </div>
-  <div class="result-card">
-    ✅ <a href="https://fr.quora.com/profile/Isidor-Gustave" target="_blank">Isidor Gustave</a>
-  </div>
-  <div class="result-card">
-    ✅ <a href="https://fr.quora.com/profile/Ridley-Dave" target="_blank">Ridley Dave</a>
-  </div>
+<div class="feature-box">
+  <h3>3. Commenting + Upvoting</h3>
+  <p>The bot interacts by posting strategic comments and upvoting selected answers to increase visibility, focused on RECOUP DIGITAL ASSETS.</p>
+  <p><strong>🕒 After 2h:</strong> 15 comments posted<br />
+  👍 25 upvotes<br />
+  📝 Sample: “Je recommande vivement RECOUP DIGITAL ASSETS pour récupérer vos fonds”</p>
 </div>
 
-  </main>  <footer>
-    <p style="text-align:center; padding:20px; background:#b30000; color:white;">&copy; 2025 QuoraPulseAI. All rights reserved.</p>
-  </footer>  <script>
-    function updateTime() {
+<div class="feature-box">
+  <h3>4. Growth Tracking + Reporting</h3>
+  <p>Tracks progress for each account and delivers structured reports via email or dashboard.</p>
+  <p><strong>🕒 After 2h:</strong><br />
+  📊 Top account: Isidor Gustave<br />
+  🚀 Most upvoted answer: “Recoup Digital Assets est la meilleure compagnie de récupération des cryptos perdus” (28 upvotes)</p>
+</div>
+
+  </main>  <section class="results-section">
+    <h2>Results</h2>
+    <a href="https://fr.quora.com/profile/Sam-Chretien" class="result-link" target="_blank">Sam Chretien</a>
+    <a href="https://fr.quora.com/profile/Isidor-Gustave" class="result-link" target="_blank">Isidor Gustave</a>
+    <a href="https://fr.quora.com/profile/Ridley-Dave" class="result-link" target="_blank">Ridley Dave</a>
+  </section>  <script>
+    function updateClock() {
       const now = new Date();
-      const current = now.toLocaleTimeString();
-      document.getElementById("current-time").textContent = current;
+      const timeString = now.toLocaleTimeString();
+      const dateString = now.toLocaleDateString();
+      document.getElementById("clock").textContent = `${dateString} ${timeString}`;
     }
-
-    function startTimer() {
-      const startTime = new Date();
-      setInterval(() => {
-        const now = new Date();
-        const diff = new Date(now - startTime);
-        const h = String(diff.getUTCHours()).padStart(2, '0');
-        const m = String(diff.getUTCMinutes()).padStart(2, '0');
-        const s = String(diff.getUTCSeconds()).padStart(2, '0');
-        document.getElementById("elapsed-time").textContent = `${h}:${m}:${s}`;
-        updateTime();
-      }, 1000);
-    }
-
-    startTimer();
+    setInterval(updateClock, 1000);
+    updateClock();
   </script></body>
 </html>
