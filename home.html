@@ -3,172 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>QuorapulseAI - Home</title>
+  <title>QuoraPulseAI - Home</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #b30000;
-      color: #fff;
+      background-color: #f2f2f2;
     }
 
     header {
+      background-color: #b30000;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      background-color: #990000;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 24px;
       font-weight: bold;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
+      text-decoration: none;
+      color: white;
     }
 
     nav {
-      display: flex;
-      gap: 20px;
+      display: none;
     }
 
-    nav a {
+    .menu-toggle {
+      font-size: 24px;
+      background: none;
+      border: none;
       color: white;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      background-color: #b30000;
+      padding: 10px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      color: white;
+      padding: 10px;
       text-decoration: none;
     }
 
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: #990000;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 10px;
-        z-index: 1;
-      }
-
-      nav.active {
-        display: flex;
-      }
+    .mobile-menu a:hover {
+      background-color: #900;
     }
 
-    .intro {
-      text-align: center;
-      padding: 80px 20px 40px;
-    }
-
-    .intro h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    .intro p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .intro a {
-      display: inline-block;
-      margin-top: 20px;
-      background-color: white;
-      color: #b30000;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    .how-it-works {
+    main {
       padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
+      text-align: center;
     }
 
-    .how-it-works h2 {
-      font-size: 2rem;
+    .welcome {
+      font-size: 26px;
+      color: #b30000;
       margin-bottom: 20px;
     }
 
-    .how-it-works p {
+    .description {
+      font-size: 18px;
       line-height: 1.6;
-      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      margin-bottom: 40px;
     }
 
     footer {
+      background-color: #333;
+      color: white;
       text-align: center;
-      padding: 30px 10px 10px;
-      font-size: 0.9rem;
-      background-color: #990000;
-      margin-top: 50px;
+      padding: 20px 10px;
     }
 
     footer a {
-      color: #fff;
-      text-decoration: underline;
-      display: block;
-      margin-top: 5px;
+      color: #25D366;
+      text-decoration: none;
+    }
+
+    .contact-links {
+      margin-top: 10px;
+    }
+
+    .contact-links img {
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        display: block;
+      }
+      .menu-toggle {
+        display: none;
+      }
+      .mobile-menu {
+        display: none !important;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">QuorapulseAI</div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <nav id="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="features.html">Features</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section class="intro" id="home">
-    <h1>Welcome to QuorapulseAI</h1>
-    <p>Your fully automated Quora assistant — fast, smart, relentless.</p>
-    <a href="features.html">Discover Features</a>
-  </section>
+<header>
+  <a href="home.html" class="logo">QuoraPulseAI</a>
+  <button class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="features.html">Features</a>
+    <a href="contact.html">Contact</a>
+    <a href="#">FAQ</a>
+  </nav>
+</header>
 
-  <section class="how-it-works">
-    <h2>How It Works</h2>
-    <p>
-      QuorapulseAI is an autonomous bot designed to mimic authentic Quora engagement. Within 2 hours, it can create multiple accounts, generate intelligent responses, post relevant comments, and upvote strategic content — all automatically. Built for speed, accuracy, and stealth, QuorapulseAI helps boost interaction and visibility without human input.  
-    </p>
-  </section>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="home.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="features.html">Features</a>
+  <a href="contact.html">Contact</a>
+  <a href="#">FAQ</a>
+</div>
 
-  <footer>
-    <p>©️ 2025 QuorapulseAI</p>
-    <a id="contact" href="mailto:terrygroup@gmail.com">Contact: terrygroup@gmail.com</a>
-  </footer>
+<main>
+  <h1 class="welcome">Welcome to QuoraPulseAI 🚀</h1>
+  <p class="description">
+    QuoraPulseAI is a powerful automated bot designed to dominate the Quora platform autonomously.
+    It creates accounts, posts questions, publishes targeted answers, comments, and strategically upvotes content.  
+    In just 2 hours, it can generate multiple accounts around the same topic.
+  </p>
 
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("nav-links");
-      nav.classList.toggle("active");
-    }
-  </script>
+  <p class="description">
+    Its main focus? 🔥 <strong>RECOUP DIGITAL ASSETS</strong> – all its content revolves around this business to maximize visibility and credibility.  
+    With advanced features, QuoraPulseAI acts like a digital army, managing multiple profiles, tracking growth, and sending detailed performance reports.  
+    It’s the perfect tool to build social proof for a brand quickly, smartly, and effectively.
+  </p>
+</main>
+
+<footer>
+  <p>&copy; 2025 QuoraPulseAI. All rights reserved.</p>
+  <div class="contact-links">
+    📧 Email: <a href="mailto:terrygroup@gmail.com">terrygroup@gmail.com</a><br />
+    💬 WhatsApp: 
+    <a href="https://wa.me/2347010758316" target="_blank">
+      <img src="https://img.icons8.com/ios-filled/20/25D366/whatsapp.png" alt="WhatsApp Icon" />
+      Chat with us
+    </a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+
 </body>
 </html>
