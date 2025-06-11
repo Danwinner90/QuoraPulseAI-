@@ -2,42 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QuoraPulseAI - Sign Up</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuorapulseAI - Sign Up</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #b30000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      color: #b30000;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #b30000;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #990000;
+    }
+
+    .signin-link {
+      margin-top: 16px;
+      display: block;
+      color: #b30000;
+      font-size: 14px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body class="auth-page">
-  <div class="auth-container">
-    <h1>Welcome to QuoraPulseAI</h1>
-    <form id="auth-form">
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
+<body>
+  <div class="container">
+    <h1>Welcome to QuorapulseAI</h1>
+    <form id="signup-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
       <button type="submit">Sign Up</button>
-      <script>
-  document.querySelector("form").addEventListener("submit", function(e) {
-    e.preventDefault(); // Empêche le rechargement par défaut
-    window.location.href = "home.html"; // Redirige vers la page d'accueil ou la page principale
-  });
-      </script>
     </form>
-    <p class="toggle-mode">Already here? <span id="toggle">Sign in</span></p>
+    <span class="signin-link" onclick="showLoginForm()">Already here? Sign in</span>
   </div>
 
   <script>
-    const toggle = document.getElementById('toggle');
-    const form = document.getElementById('auth-form');
-    let isSignUp = true;
+    const form = document.getElementById("signup-form");
 
-    toggle.addEventListener('click', () => {
-      isSignUp = !isSignUp;
-      document.querySelector('button').textContent = isSignUp ? 'Sign Up' : 'Sign In';
-      toggle.textContent = isSignUp ? 'Sign in' : 'Sign up';
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Stockage simple dans localStorage
+      localStorage.setItem("quora_email", email);
+      localStorage.setItem("quora_password", password);
+
+      // Redirection vers la page d'accueil principale
+      window.location.href = "home.html";
     });
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      window.location.href = \"home.html\";
-    });
+    function showLoginForm() {
+      const formContainer = document.querySelector(".container");
+      formContainer.innerHTML = `
+        <h1>Sign In</h1>
+        <form id="signin-form">
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+        </form>
+        <span class="signin-link" onclick="location.reload()">Don't have an account? Sign up</span>
+      `;
+
+      document.getElementById("signin-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const storedEmail = localStorage.getItem("quora_email");
+        const storedPassword = localStorage.getItem("quora_password");
+
+        if (email === storedEmail && password === storedPassword) {
+          window.location.href = "home.html";
+        } else {
+          alert("Invalid credentials. Try again.");
+        }
+      });
+    }
   </script>
 </body>
 </html>
