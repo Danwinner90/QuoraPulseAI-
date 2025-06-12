@@ -5,46 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | QuoraPulseAI</title>
   <link rel="icon" href="/logo.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .menu-toggle:checked ~ .menu {
-      display: block;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
 </head>
 <body class="bg-gray-50 text-gray-900">
 
   <!-- Header -->
-  <header class="bg-red-700 text-white px-6 py-4 flex items-center justify-between shadow-md">
+  <header class="flex items-center justify-between px-6 py-4 bg-red-700 shadow-md text-white">
     <div class="flex items-center space-x-4">
       <img src="/logo.png" alt="Logo" class="h-10">
       <h1 class="text-2xl font-bold">QuoraPulseAI</h1>
     </div>
-
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-6 text-white">
+    <nav class="hidden md:flex space-x-6">
       <a href="/" class="hover:underline">Home</a>
-      <a href="/about.html" class="font-semibold underline">About</a>
+      <a href="/about.html" class="underline font-semibold">About</a>
       <a href="/features.html" class="hover:underline">Features</a>
       <a href="/contact.html" class="hover:underline">Contact</a>
       <a href="/faq.html" class="hover:underline">FAQ</a>
     </nav>
-
-    <!-- Hamburger Menu -->
+    <!-- Hamburger Icon -->
     <div class="md:hidden">
-      <input type="checkbox" id="menu-toggle" class="menu-toggle hidden">
-      <label for="menu-toggle" class="cursor-pointer">
-        <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
-          <path d="M4 5h16M4 12h16M4 19h16"/>
+      <button id="hamburgerBtn" class="focus:outline-none">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
-      </label>
+      </button>
     </div>
   </header>
 
   <!-- Mobile Menu -->
-  <div class="menu hidden md:hidden bg-red-700 text-white px-6 py-4 space-y-2">
+  <div id="mobileMenu" class="md:hidden hidden bg-red-700 text-white px-6 py-4 space-y-2">
     <a href="/" class="block hover:underline">Home</a>
-    <a href="/about.html" class="block font-semibold underline">About</a>
+    <a href="/about.html" class="block hover:underline font-semibold">About</a>
     <a href="/features.html" class="block hover:underline">Features</a>
     <a href="/contact.html" class="block hover:underline">Contact</a>
     <a href="/faq.html" class="block hover:underline">FAQ</a>
@@ -63,14 +56,16 @@
       <li>Display real-time stats: questions, comments, and upvotes</li>
     </ul>
 
-    <!-- Ask the bot button -->
-    <div class="mt-6">
-      <a href="/ask" class="inline-block bg-red-700 text-white px-6 py-2 rounded hover:bg-red-800 transition">Ask the bot</a>
+    <!-- Ask the Bot Button -->
+    <div class="mt-8">
+      <a href="/chat.html" class="inline-block bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">
+        💬 Ask the Bot
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="px-6 py-6 mt-10 bg-red-700 text-white text-center text-sm">
+  <footer class="px-6 py-6 mt-10 bg-red-700 text-center text-sm text-white">
     <div class="mb-2">&copy; 2025 QuoraPulseAI. All rights reserved.</div>
     <div class="mb-1">
       📧 <a href="mailto:terrygroup@gmail.com" class="underline hover:text-gray-200">terrygroup@gmail.com</a>
@@ -79,6 +74,14 @@
       💬 <a href="https://wa.me/2347010758316" class="underline hover:text-gray-200">WhatsApp: +234 701 075 8316</a>
     </div>
   </footer>
+
+  <!-- JS for hamburger menu -->
+  <script>
+    document.getElementById('hamburgerBtn').addEventListener('click', function () {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
 </body>
 </html>
