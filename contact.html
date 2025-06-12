@@ -12,12 +12,13 @@
     }
 
     header {
-      background-color: #003366;
+      background-color: #cc0000;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 20px;
+      position: relative;
     }
 
     .logo {
@@ -33,11 +34,38 @@
       margin-right: 8px;
     }
 
+    nav {
+      display: flex;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 15px;
       font-size: 1rem;
+    }
+
+    .hamburger {
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #cc0000;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 0;
     }
 
     main {
@@ -54,7 +82,7 @@
     .section-title {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #003366;
+      color: #cc0000;
       margin-bottom: 15px;
     }
 
@@ -67,18 +95,18 @@
 
     .contact-info {
       font-size: 1rem;
-      color: #003366;
+      color: #cc0000;
     }
 
     .contact-info a {
       display: block;
-      color: #003366;
+      color: #cc0000;
       text-decoration: none;
       margin-top: 5px;
     }
 
     footer {
-      background-color: #003366;
+      background-color: #cc0000;
       color: white;
       text-align: center;
       padding: 15px 10px;
@@ -94,13 +122,14 @@
 
       .hamburger {
         display: block;
-        font-size: 1.5rem;
       }
-    }
 
-    @media (min-width: 601px) {
-      .hamburger {
+      .mobile-menu {
         display: none;
+      }
+
+      .mobile-menu.active {
+        display: flex;
       }
     }
   </style>
@@ -120,7 +149,14 @@
       <a href="contact.html">Contact</a>
       <a href="faq.html">FAQ</a>
     </nav>
-    <div class="hamburger">&#9776;</div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </div>
   </header>
 
   <!-- Main Section -->
@@ -145,5 +181,13 @@
     &copy; 2025 QuoraPulseAI. All rights reserved.
   </footer>
 
+  <!-- JavaScript for Mobile Menu -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
+  </script>
+
 </body>
-</html>
+      </html>
