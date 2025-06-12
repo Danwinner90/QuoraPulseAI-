@@ -1,123 +1,192 @@
-<!DOCTYPE html><html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Features - QuoraPulseAI</title>
-    <script>
-      function updateClock() {
-        const now = new Date();
-        const timeString = now.toLocaleTimeString();
-        document.getElementById("liveClock").textContent = timeString;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features - QuoraPulseAI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background-color: #cc0000;
+      padding: 10px 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+    }
+
+    header h1 img {
+      width: 24px;
+      height: 24px;
+      margin-left: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .mobile-nav a {
+      padding: 8px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
       }
-      setInterval(updateClock, 1000);
-      window.onload = updateClock;
-    </script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f8f9fa;
-      }
-      header {
-        background-color: #1e2a38;
-        padding: 10px;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      header h1 {
-        margin: 0;
-        display: flex;
-        align-items: center;
-      }
-      header h1 img {
-        width: 24px;
-        height: 24px;
-        margin-left: 10px;
-      }
-      nav a {
-        color: white;
-        text-decoration: none;
-        margin-left: 15px;
-      }
-      .container {
-        padding: 20px;
-      }
-      .stats, .results {
-        background-color: white;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        margin-top: 20px;
-      }
-      footer {
-        background-color: #1e2a38;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        margin-top: 20px;
-      }
-      button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .download-btn {
-        margin-top: 10px;
+
+      .hamburger {
         display: block;
       }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>QuoraPulseAI <img src="robot-icon.png" alt="Bot Icon"></h1>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/features">Features</a>
-        <a href="/contact">Contact</a>
-        <a href="/faq">FAQ</a>
-      </nav>
-    </header><div class="container">
-  <div style="display: flex; align-items: center; gap: 10px;">
-    <span style="font-size: 1.5rem;">⏰</span>
-    <h2 id="liveClock">--:--:--</h2>
-  </div>
-  <p>Next account creation scheduled in 31 hour(s).</p>
-  <button>Refresh</button>
 
-  <div class="stats">
-    <h3>📊 Bot Stats after 2 Hours</h3>
-    <p>📌 Accounts Created: 3</p>
-    <p>❗ Questions Posted: 3</p>
-    <p>💬 Comments Added: 20</p>
-    <p>⬆️ Upvotes Generated: 50</p>
-    <button class="download-btn">Download Report</button>
+      .mobile-nav.active {
+        display: flex;
+      }
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .stats, .results {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .download-btn {
+      margin-top: 10px;
+      display: block;
+    }
+
+    footer {
+      background-color: #cc0000;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString();
+      document.getElementById("liveClock").textContent = timeString;
+    }
+
+    setInterval(updateClock, 1000);
+    window.onload = updateClock;
+
+    function toggleMenu() {
+      const mobileNav = document.getElementById("mobileNav");
+      mobileNav.classList.toggle("active");
+    }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>QuoraPulseAI <img src="robot-icon.png" alt="Bot Icon" /></h1>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/features">Features</a>
+      <a href="/contact">Contact</a>
+      <a href="/faq">FAQ</a>
+    </nav>
+    <div id="mobileNav" class="mobile-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/features">Features</a>
+      <a href="/contact">Contact</a>
+      <a href="/faq">FAQ</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="font-size: 1.5rem;">⏰</span>
+      <h2 id="liveClock">--:--:--</h2>
+    </div>
+    <p>Next account creation scheduled in 31 hour(s).</p>
+    <button>Refresh</button>
+
+    <div class="stats">
+      <h3>📊 Bot Stats after 2 Hours</h3>
+      <p>📌 Accounts Created: 3</p>
+      <p>❗ Questions Posted: 3</p>
+      <p>💬 Comments Added: 15</p>
+      <p>⬆️ Upvotes Generated: 30</p>
+      <button class="download-btn">Download Report</button>
+    </div>
+
+    <div class="results">
+      <h3>📂 Results</h3>
+      <p><a href="https://quora.com/profile/Account1">https://quora.com/profile/Account1</a></p>
+      <p><a href="https://quora.com/profile/Account2">https://quora.com/profile/Account2</a></p>
+      <p><a href="https://quora.com/profile/Account3">https://quora.com/profile/Account3</a></p>
+    </div>
   </div>
 
-  <div class="results">
-    <h3>📂 Results</h3>
-    <p><a href="https://quora.com/profile/Account1">https://quora.com/profile/Account1</a></p>
-    <p><a href="https://quora.com/profile/Account2">https://quora.com/profile/Account2</a></p>
-    <p><a href="https://quora.com/profile/Account3">https://quora.com/profile/Account3</a></p>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="px-6 py-6 mt-10 bg-gray-100 text-center text-sm text-gray-600">
-  <div class="mb-2">&copy; 2025 QuoraPulseAI. All rights reserved.</div>
-  <div class="mb-1">
-    📧 <a href="mailto:terrygroup@gmail.com" class="text-blue-600 hover:underline">terrygroup@gmail.com</a>
-  </div>
-  <div>
-    💬 <a href="https://wa.me/2347010758316" class="text-green-600 hover:underline">WhatsApp: +234 701 075 8316</a>
-  </div>
-</footer>
-
-  </body>
+  <!-- Footer -->
+  <footer>
+    <div>&copy; 2025 QuoraPulseAI. All rights reserved.</div>
+    <div>📧 <a href="mailto:terrygroup@gmail.com">terrygroup@gmail.com</a></div>
+    <div>💬 <a href="https://wa.me/2347010758316" target="_blank">WhatsApp: +234 701 075 8316</a></div>
+  </footer>
+</body>
 </html>
