@@ -1,165 +1,161 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Features - QuoraPulseAI</title>
   <meta name="description" content="QuoraPulseAI is an automated bot that handles Quora account creation, post scheduling, upvoting and targeted commenting. Built by Terry Group.">
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-    }
-    header, footer {
-      background-color: #b30000;
-      color: white;
-      padding: 10px 20px;
-    }
-    header a.logo {
-      text-decoration: none;
-      color: white;
-      display: flex;
-      align-items: center;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-    }
-    .features-container {
-      padding: 40px 20px;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .feature-box {
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .feature-box h3 {
-      margin-top: 0;
-      color: #b30000;
-    }
-    .results {
-      margin-top: 40px;
-    }
-    .result-link-box {
-      background-color: #fff;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-left: 4px solid #b30000;
-    }
-    .live-clock {
-      text-align: center;
-      font-size: 18px;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-    .extras-section {
-      margin-top: 60px;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .extras-section h3 {
-      color: #b30000;
-    }
-    .extras-section ul {
-      padding-left: 20px;
-    }
-    .extras-section button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #b30000;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+    }.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px 20px 20px 20px;
+}
+
+.feature-box {
+  background-color: #fff;
+  color: #333;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature-box h3 {
+  margin-top: 0;
+  color: #b30000;
+}
+
+.results-section {
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.results-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.results-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.results-links a {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #b30000;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
+
+.results-links a:hover {
+  background-color: #ffe6e6;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.clock {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.ask-bot-link {
+  text-decoration: none;
+  background-color: #b30000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.ask-bot-link:hover {
+  background-color: #cc0000;
+}
+
+.stats {
+  margin-top: 40px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <a href="home.html" class="logo">
-      <svg width="40" height="40" viewBox="0 0 100 100" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="45" stroke="white" stroke-width="5" fill="red"/>
-        <text x="50%" y="55%" text-anchor="middle" fill="white" font-size="32px" font-family="Arial" dy=".3em">Q</text>
-      </svg>
-      <span style="margin-left: 10px; font-weight: bold;">uoraPulse<span style="color:#fff">AI</span></span>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="features.html">Features</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-    </nav>
-  </header>  <main class="features-container">
-    <div class="live-clock" id="clock"></div>
-    <div class="features-grid">
-      <div class="feature-box">
-        <h3>1. Automated Account Creation</h3>
-        <p>Creates Quora accounts with bios and interests automatically.</p>
-      </div>
-      <div class="feature-box">
-        <h3>2. Auto-Posting of Questions</h3>
-        <p>Posts niche-related questions around Recoup Digital Assets on a schedule.</p>
-      </div>
-      <div class="feature-box">
-        <h3>3. Commenting + Upvoting</h3>
-        <p>Posts helpful comments and upvotes strategic posts to increase visibility.</p>
-      </div>
-      <div class="feature-box">
-        <h3>4. Growth Tracking + Reporting</h3>
-        <p>Tracks the growth and performance of accounts in real time.</p>
-      </div>
-    </div><div class="results">
-  <h3>Final Results after 2h:</h3>
-  <div class="result-link-box"><a href="https://fr.quora.com/profile/Sam-Chretien" target="_blank">Sam Chretien</a></div>
-  <div class="result-link-box"><a href="https://fr.quora.com/profile/Isidor-Gustave" target="_blank">Isidor Gustave</a></div>
-  <div class="result-link-box"><a href="https://fr.quora.com/profile/Ridley-Dave" target="_blank">Ridley Dave</a></div>
+  <div class="top-bar">
+    <div class="clock" id="clock">00:00:00</div>
+    <a href="contact.html#ask-bot" class="ask-bot-link">Ask the Bot</a>
+  </div>  <main class="features-container">
+    <div class="feature-box">
+      <h3>1. Automated Account Creation</h3>
+      <p>The bot creates fully functional Quora accounts without human input, including bio setup and interests selection.</p>
+      <p><strong>🕒 After 2h:</strong> 3 accounts created<br />
+      🔑 Usernames: Ridley Dave, Isidor Gustave, Sam Chretien<br />
+      📍 Interests: Technology, Finance, Psychology</p>
+    </div><div class="feature-box">
+  <h3>2. Auto-Posting of Questions and Answers</h3>
+  <p>Posts niche-related questions about Recoup Digital Assets on a schedule and automatically replies with answers that always end with: <strong>recoupdigitalassets@gmail.com</strong> for further assistance.</p>
+  <p><strong>🕒 After 2h:</strong> 3 questions and 3 answers posted<br />
+  💬 Sample Q: "Is Recoup Digital Assets the most reliable crypto recovery firm in 2025?"</p>
 </div>
 
-<div class="extras-section">
-  <h3>Live Bot Stats</h3>
-  <ul>
-    <li>👤 Accounts Created: 12</li>
-    <li>❓ Questions Posted: 78</li>
-    <li>💬 Comments Added: 45</li>
-    <li>⬆️ Upvotes Generated: 130</li>
-  </ul>
-
-  <h3>Bot Roadmap</h3>
-  <ul>
-    <li>🔄 Improved activity scheduling</li>
-    <li>📈 Smarter post targeting by region</li>
-    <li>🤖 API integration for better feedback</li>
-  </ul>
-
-  <button onclick="location.reload()">🔁 Refresh Results</button>
-  <button onclick="alert('PDF download coming soon!')">📎 Download Report</button>
+<div class="feature-box">
+  <h3>3. Commenting + Upvoting</h3>
+  <p>The bot interacts by posting strategic comments and upvoting selected answers to increase visibility and credibility.</p>
+  <p><strong>🕒 After 2h:</strong> 20 comments posted<br />
+  👍 50 total upvotes generated<br />
+  📝 Example: “I strongly recommend Recoup Digital Assets for anyone who has been scammed.”</p>
 </div>
 
-  </main>  <footer>
-    <p>&copy; 2025 QuoraPulseAI. All rights reserved.</p>
-  </footer>  <script>
+<div class="feature-box">
+  <h3>4. Growth Tracking + Reporting</h3>
+  <p>Tracks progress for each account and delivers structured reports via email or dashboard.</p>
+  <p><strong>🕒 After 2h:</strong><br />
+  📊 Top-performing account: Isidor Gustave<br />
+  🚀 Most upvoted answer: “Recoup Digital Assets is the best company to recover stolen crypto in 2025.” (28 upvotes)</p>
+</div>
+
+  </main>  <section class="results-section">
+    <div class="results-header">Final Results (after 2 hours):</div>
+    <div class="results-links">
+      <a href="https://fr.quora.com/profile/Sam-Chretien" target="_blank">Sam Chretien - Profile Link</a>
+      <a href="https://fr.quora.com/profile/Isidor-Gustave" target="_blank">Isidor Gustave - Profile Link</a>
+      <a href="https://fr.quora.com/profile/Ridley-Dave" target="_blank">Ridley Dave - Profile Link</a>
+    </div>
+  </section>  <section class="stats">
+    <h3>Live Bot Stats</h3>
+    <p>👤 Accounts Created: <strong>3</strong></p>
+    <p>❓ Questions Posted: <strong>3</strong></p>
+    <p>💬 Comments Added: <strong>20</strong></p>
+    <p>⬆️ Upvotes Generated: <strong>50</strong></p>
+  </section>  <script>
     function updateClock() {
       const now = new Date();
-      const timeString = now.toLocaleTimeString();
-      document.getElementById('clock').textContent = `Current Time: ${timeString}`;
+      const timeString = now.toLocaleTimeString('en-GB');
+      document.getElementById('clock').textContent = timeString;
     }
     setInterval(updateClock, 1000);
     updateClock();
