@@ -70,6 +70,20 @@
       <p class="mb-1">📧 <a href="mailto:terrygroup@gmail.com" class="text-blue-600 hover:underline">terrygroup@gmail.com</a></p>
       <p>💬 <a href="https://wa.me/2347010758316" class="text-green-600 hover:underline">WhatsApp: +234 701 075 8316</a></p>
     </footer>
+<!-- Horloge dynamique -->
+<span id="liveClock" class="font-semibold text-xl"></span>
 
+<script>
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById("liveClock").textContent = `${hours}:${minutes}:${seconds} AM`;
+  }
+
+  setInterval(updateClock, 1000); // mise à jour chaque seconde
+  updateClock(); // appel initial au chargement
+</script>
   </body>
 </html>
