@@ -1,74 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - QuoraPulseAI</title>
-  <meta name="description" content="QuoraPulseAI is an automated bot that handles Quora account creation, post scheduling, upvoting and targeted commenting. Built by Terry Group.">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - QuoraPulse AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .contact-container {
-      max-width: 600px;
-      margin: 100px auto;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      text-align: center;
-    }
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .contact-container h2 {
-      color: #b30000;
-      margin-bottom: 20px;
-    }
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
+}
 
-    .contact-container p {
-      font-size: 18px;
-      color: #333;
-    }
-
-    .faq-link {
-      display: block;
-      margin-top: 25px;
-      color: #b30000;
-      text-decoration: underline;
-      font-weight: bold;
-      cursor: pointer;
-    }
   </style>
-</head>
-<body class="main-page">
-  <header>
-    <a href="home.html" class="logo">
-  <svg width="40" height="40" viewBox="0 0 100 100" fill="white" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
-    <circle cx="50" cy="50" r="45" stroke="white" stroke-width="5" fill="red"/>
-    <text x="50%" y="55%" text-anchor="middle" fill="white" font-size="32px" font-family="Arial" dy=".3em">Q</text>
-  </svg>
-  <span style="margin-left: 10px; font-weight: bold;">uoraPulse<span style="color:#fff;">AI</span></span>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="features.html">Features</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <div class="contact-container">
-      <h2>Get in Touch</h2>
-      <p>For any inquiries, collaborations or questions, reach us at:</p>
-      <p><strong>📩 terrygroup@gmail.com</strong></p>
-
-      <a class="faq-link">FAQ</a> <!-- lien juste visible -->
+</head><body class="bg-gray-50 text-gray-800 animate-fade-in">
+  <!-- Header -->
+  <header class="bg-slate-800 text-white p-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="logo.png" alt="Logo" class="h-8 w-8" />
+      <span class="text-xl font-bold">QuoraPulse AI</span>
     </div>
-  </main>
+    <nav class="space-x-4">
+      <a href="#" class="hover:underline">Dashboard</a>
+      <a href="#" class="hover:underline">Content</a>
+      <a href="#" class="hover:underline">Settings</a>
+    </nav>
+  </header>  <!-- Main -->  <main class="p-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300">
+        <p class="text-sm text-gray-500">Accounts</p>
+        <p class="text-2xl font-semibold">20</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300">
+        <p class="text-sm text-gray-500">Posts</p>
+        <p class="text-2xl font-semibold">54</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300">
+        <p class="text-sm text-gray-500">Likes</p>
+        <p class="text-2xl font-semibold">372</p>
+      </div>
+    </div><div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+  <!-- Posting Activity -->
+  <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300">
+    <h2 class="text-lg font-semibold mb-2">Posting Activity</h2>
+    <img src="activity.png" alt="Posting Activity Graph" class="w-full" />
+  </div>
 
-  <footer>
-    <p>&copy; 2025 QuoraPulseAI. All rights reserved.</p>
+  <!-- Account Creation -->
+  <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300">
+    <h2 class="text-lg font-semibold mb-4">Account Creation</h2>
+    <div class="space-y-3">
+      <div>
+        <span class="text-green-600 font-semibold">Active</span>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-blue-500 h-2.5 rounded-full" style="width: 60%"></div>
+        </div>
+      </div>
+      <div>
+        <span class="text-green-600 font-semibold">Active</span>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div>
+        </div>
+      </div>
+      <div>
+        <span class="text-green-600 font-semibold">Active</span>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-blue-500 h-2.5 rounded-full" style="width: 50%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recent Posts -->
+<div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300">
+  <h2 class="text-lg font-semibold mb-4">Recent Posts</h2>
+  <table class="w-full text-left border divide-y divide-gray-200 rounded-lg overflow-hidden text-sm bg-white">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="p-2">Account</th>
+        <th class="p-2">Title</th>
+        <th class="p-2">Likes</th>
+        <th class="p-2">Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-gray-50">
+        <td class="p-2">user17</td>
+        <td class="p-2">Benefits of regular exercise</td>
+        <td class="p-2">12</td>
+        <td class="p-2">8</td>
+      </tr>
+      <tr class="hover:bg-gray-50">
+        <td class="p-2">user20</td>
+        <td class="p-2">How to improve productivity?</td>
+        <td class="p-2">8</td>
+        <td class="p-2">6</td>
+      </tr>
+      <tr class="hover:bg-gray-50">
+        <td class="p-2">user08</td>
+        <td class="p-2">Tips for healthy eating</td>
+        <td class="p-2">15</td>
+        <td class="p-2">4</td>
+      </tr>
+      <tr class="hover:bg-gray-50">
+        <td class="p-2">user14</td>
+        <td class="p-2">What are the best places to visit in Europe?</td>
+        <td class="p-2">7</td>
+        <td class="p-2">2</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  </main>  <!-- Footer -->  <footer class="bg-slate-800 text-white text-sm p-4 flex flex-col md:flex-row items-center justify-between">
+    <p>&copy; 2025 QuoraPulse AI. All rights reserved.</p>
+    <div class="space-x-4 mt-2 md:mt-0">
+      <a href="mailto:terrygroup@gmail.com" class="hover:underline">terrygroup@gmail.com</a>
+      <a href="https://wa.me/2347010758316" class="hover:underline" target="_blank">WhatsApp: +234 701 075 8316</a>
+    </div>
   </footer>
-</body>
-</html>
+</body></html>
