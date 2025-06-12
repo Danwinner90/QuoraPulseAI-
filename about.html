@@ -5,24 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | QuoraPulseAI</title>
   <link rel="icon" href="/logo.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .menu-toggle:checked ~ .menu {
+      display: block;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
   <!-- Header -->
-  <header class="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+  <header class="bg-red-700 text-white px-6 py-4 flex items-center justify-between shadow-md">
     <div class="flex items-center space-x-4">
       <img src="/logo.png" alt="Logo" class="h-10">
       <h1 class="text-2xl font-bold">QuoraPulseAI</h1>
     </div>
-    <nav class="space-x-6 text-gray-700">
-      <a href="/" class="hover:text-blue-500">Home</a>
-      <a href="/about.html" class="text-blue-600 font-semibold">About</a>
-      <a href="/features.html" class="hover:text-blue-500">Features</a>
-      <a href="/contact.html" class="hover:text-blue-500">Contact</a>
-      <a href="/faq.html" class="hover:text-blue-500">FAQ</a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-6 text-white">
+      <a href="/" class="hover:underline">Home</a>
+      <a href="/about.html" class="font-semibold underline">About</a>
+      <a href="/features.html" class="hover:underline">Features</a>
+      <a href="/contact.html" class="hover:underline">Contact</a>
+      <a href="/faq.html" class="hover:underline">FAQ</a>
     </nav>
+
+    <!-- Hamburger Menu -->
+    <div class="md:hidden">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle hidden">
+      <label for="menu-toggle" class="cursor-pointer">
+        <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
+          <path d="M4 5h16M4 12h16M4 19h16"/>
+        </svg>
+      </label>
+    </div>
   </header>
+
+  <!-- Mobile Menu -->
+  <div class="menu hidden md:hidden bg-red-700 text-white px-6 py-4 space-y-2">
+    <a href="/" class="block hover:underline">Home</a>
+    <a href="/about.html" class="block font-semibold underline">About</a>
+    <a href="/features.html" class="block hover:underline">Features</a>
+    <a href="/contact.html" class="block hover:underline">Contact</a>
+    <a href="/faq.html" class="block hover:underline">FAQ</a>
+  </div>
 
   <!-- About Section -->
   <section class="px-6 mt-10">
@@ -36,16 +62,21 @@
       <li>Track performance across multiple accounts</li>
       <li>Display real-time stats: questions, comments, and upvotes</li>
     </ul>
+
+    <!-- Ask the bot button -->
+    <div class="mt-6">
+      <a href="/ask" class="inline-block bg-red-700 text-white px-6 py-2 rounded hover:bg-red-800 transition">Ask the bot</a>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="px-6 py-6 mt-10 bg-gray-100 text-center text-sm text-gray-600">
+  <footer class="px-6 py-6 mt-10 bg-red-700 text-white text-center text-sm">
     <div class="mb-2">&copy; 2025 QuoraPulseAI. All rights reserved.</div>
     <div class="mb-1">
-      📧 <a href="mailto:terrygroup@gmail.com" class="text-blue-600 hover:underline">terrygroup@gmail.com</a>
+      📧 <a href="mailto:terrygroup@gmail.com" class="underline hover:text-gray-200">terrygroup@gmail.com</a>
     </div>
     <div>
-      💬 <a href="https://wa.me/2347010758316" class="text-green-600 hover:underline">WhatsApp: +234 701 075 8316</a>
+      💬 <a href="https://wa.me/2347010758316" class="underline hover:text-gray-200">WhatsApp: +234 701 075 8316</a>
     </div>
   </footer>
 
