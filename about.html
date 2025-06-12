@@ -3,45 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - QuoraPulseAI</title>
-  <meta name="description" content="QuoraPulseAI is an automated bot that handles Quora account creation, post scheduling, upvoting and targeted commenting. Built by Terry Group.">
-  <link rel="stylesheet" href="style.css" />
+  <title>About | QuoraPulseAI</title>
+  <link rel="icon" href="/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
 </head>
-<body class="main-page">
-  <header>
-    <a href="home.html" class="logo">
-  <svg width="40" height="40" viewBox="0 0 100 100" fill="white" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
-    <circle cx="50" cy="50" r="45" stroke="white" stroke-width="5" fill="red"/>
-    <text x="50%" y="55%" text-anchor="middle" fill="white" font-size="32px" font-family="Arial" dy=".3em">Q</text>
-  </svg>
-  <span style="margin-left: 10px; font-weight: bold;">uoraPulse<span style="color:#fff;">AI</span></span>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="features.html">Features</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+    <div class="flex items-center space-x-4">
+      <img src="/logo.png" alt="Logo" class="h-10">
+      <h1 class="text-2xl font-bold">QuoraPulseAI</h1>
+    </div>
+    <nav class="space-x-6 text-gray-700">
+      <a href="/" class="hover:text-blue-500">Home</a>
+      <a href="/about.html" class="text-blue-600 font-semibold">About</a>
+      <a href="/features.html" class="hover:text-blue-500">Features</a>
+      <a href="/contact.html" class="hover:text-blue-500">Contact</a>
+      <a href="/faq.html" class="hover:text-blue-500">FAQ</a>
     </nav>
   </header>
 
-  <main class="hero">
-    <h2>About QuoraPulseAI</h2>
-    <p>
-      QuoraPulseAI was created by <strong>Terry and his team</strong>, with a single goal in mind: to revolutionize how users interact with Quora.
+  <!-- About Section -->
+  <section class="px-6 mt-10">
+    <h2 class="text-2xl font-bold mb-4">🤖 About QuoraPulseAI</h2>
+    <p class="text-gray-700 leading-relaxed">
+      QuoraPulseAI is a smart automation tool designed to manage and grow Quora presence efficiently. It can:
     </p>
-    <p>
-      This powerful bot automates your Quora experience, enhances productivity, and ensures you never miss important insights. Whether you're a marketer, researcher, or just curious, QuoraPulseAI is your new favorite companion.
-    </p>
-    <p>
-      We believe in simplifying complexity — let our AI handle the repetitive tasks, while you focus on what truly matters. This isn’t just another tool — it’s a pulse on Quora’s universe.
-    </p>
-  </main>
+    <ul class="list-disc list-inside mt-4 text-gray-800">
+      <li>Automatically create realistic Quora accounts</li>
+      <li>Post niche-based questions and AI-generated answers</li>
+      <li>Track performance across multiple accounts</li>
+      <li>Display real-time stats: questions, comments, and upvotes</li>
+    </ul>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 QuoraPulseAI. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="px-6 py-6 mt-10 bg-gray-100 text-center text-sm text-gray-600">
+    <div class="mb-2">&copy; 2025 QuoraPulseAI. All rights reserved.</div>
+    <div class="mb-1">
+      📧 <a href="mailto:terrygroup@gmail.com" class="text-blue-600 hover:underline">terrygroup@gmail.com</a>
+    </div>
+    <div>
+      💬 <a href="https://wa.me/2347010758316" class="text-green-600 hover:underline">WhatsApp: +234 701 075 8316</a>
+    </div>
   </footer>
+
 </body>
 </html>
