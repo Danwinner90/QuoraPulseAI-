@@ -1,19 +1,26 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Features | QuoraPulseAI</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"/>
   <link rel="icon" href="/logo.png">
   <script>
     function updateClock() {
       const now = new Date();
       const time = now.toLocaleTimeString();
       document.getElementById('clock').textContent = time;
+
+      const nextHour = (60 - now.getMinutes()) % 60;
+      const scheduledMsg = `Next account creation scheduled in ${nextHour === 0 ? 'less than 1' : nextHour} hour(s).`;
+      document.getElementById('scheduled-msg').textContent = scheduledMsg;
     }
     setInterval(updateClock, 1000);
     window.onload = updateClock;
   </script>
-</head><body class="bg-gray-50 text-gray-900">
+</head>
+<body class="bg-gray-50 text-gray-900">
   <!-- Header -->
   <header class="flex items-center justify-between px-6 py-4 bg-white shadow-md">
     <div class="flex items-center space-x-4">
@@ -27,35 +34,22 @@
       <a href="/contact.html" class="hover:text-blue-500">Contact</a>
       <a href="/faq.html" class="hover:text-blue-500">FAQ</a>
     </nav>
-  </header>  <!-- Clock & Ask the Bot -->  <section class="flex justify-between items-start px-6 mt-6">
+  </header>
+
+  <!-- Clock & Ask the Bot -->
+  <section class="flex justify-between items-start px-6 mt-6">
     <div>
       <div class="text-xl font-bold">⏰ <span id="clock"></span></div>
+      <p id="scheduled-msg" class="text-sm mt-1 text-gray-700"></p>
       <button onclick="location.reload()" class="mt-2 px-4 py-1 bg-gray-300 rounded hover:bg-gray-400">Refresh</button>
     </div>
     <div>
       <a href="/ask.html" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Ask the Bot</a>
     </div>
-  </section>  <!-- Features -->  <section class="px-6 mt-8">
-    <h2 class="text-2xl font-bold mb-6">Features</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-white rounded-xl shadow p-4">
-        <h3 class="text-lg font-semibold mb-2">Automated Account Creation</h3>
-        <p>Creates Quora accounts with realistic details and stores login information securely.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4">
-        <h3 class="text-lg font-semibold mb-2">Auto-Posting of Questions and Answers</h3>
-        <p>Posts niche-related questions around Recoup Digital Assets on a schedule and replies with content signed off by recoupdigitalassets@gmail.com.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4">
-        <h3 class="text-lg font-semibold mb-2">Live Stats Dashboard</h3>
-        <p>Track created accounts, posted questions, added comments, and generated upvotes live.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4">
-        <h3 class="text-lg font-semibold mb-2">Performance Tracking</h3>
-        <p>Highlights top-performing content and engagement across multiple accounts.</p>
-      </div>
-    </div>
-  </section>  <!-- Live Stats -->  <section class="px-6 mt-10">
+  </section>
+
+  <!-- Live Stats -->
+  <section class="px-6 mt-10">
     <h2 class="text-xl font-bold mb-4">📊 Bot Stats after 2 Hours</h2>
     <div class="bg-white shadow rounded-xl p-6 relative">
       <p>📌 Accounts Created: 3</p>
@@ -64,14 +58,20 @@
       <p>⬆️ Upvotes Generated: 50</p>
       <button class="absolute bottom-4 right-4 px-4 py-1 bg-green-500 text-white rounded hover:bg-green-600">Download Report</button>
     </div>
-  </section>  <!-- Results Section -->  <section class="px-6 mt-10">
+  </section>
+
+  <!-- Results Section -->
+  <section class="px-6 mt-10">
     <h2 class="text-xl font-bold mb-4">📂 Results</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <a href="https://quora.com/profile/Account1" class="block p-4 bg-white rounded-xl shadow hover:shadow-lg">https://quora.com/profile/Account1</a>
       <a href="https://quora.com/profile/Account2" class="block p-4 bg-white rounded-xl shadow hover:shadow-lg">https://quora.com/profile/Account2</a>
       <a href="https://quora.com/profile/Account3" class="block p-4 bg-white rounded-xl shadow hover:shadow-lg">https://quora.com/profile/Account3</a>
     </div>
-  </section>  <!-- Footer -->  <footer class="px-6 py-6 mt-10 bg-gray-100 text-center text-sm text-gray-600">
+  </section>
+
+  <!-- Footer -->
+  <footer class="px-6 py-6 mt-10 bg-gray-100 text-center text-sm text-gray-600">
     <div class="mb-2">&copy; 2025 QuoraPulseAI. All rights reserved.</div>
     <div class="mb-1">
       📧 <a href="mailto:terrygroup@gmail.com" class="text-blue-600 hover:underline">terrygroup@gmail.com</a>
@@ -80,4 +80,5 @@
       💬 <a href="https://wa.me/2347010758316" class="text-green-600 hover:underline">WhatsApp: +234 701 075 8316</a>
     </div>
   </footer>
-</body></html>
+</body>
+</html>
